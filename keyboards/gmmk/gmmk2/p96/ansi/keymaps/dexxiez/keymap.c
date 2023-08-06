@@ -48,6 +48,35 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______,  UC_WIN,   _______,                      _______,                                _______,  _______,  _______,  RGB_RMOD,  RGB_VAD,  RGB_MOD,  _______,  _______)
 };
 
-void keyboard_post_init_user(void) {
-    rgb_matrix_set_color_all(60, 0, 127);
+
+#define RGB_BG 0xCC, 0x56, 0x03
+
+static int MEDIA_KEYS[] = {5,6,7,8};
+static int MEDIA_KEYS_LENGTH = sizeof(MEDIA_KEYS) / sizeof(MEDIA_KEYS[0]);
+
+bool rgb_matrix_indicators_kb (void){
+  // If layer _FL is active
+  if (layer_state_is(_FL)) {
+    // Background color
+    rgb_matrix_set_color_all(RGB_BLACK);
+
+    for (int i = 0; i < MEDIA_KEYS_LENGTH; i++) {
+      rgb_matrix_set_color(MEDIA_KEYS[i], RGB_BG);
+    }
+
+    return true;
+  }
+
+  // Background color
+  rgb_matrix_set_color_all(RGB_BG);
+  rgb_matrix_set_color(0, RGB_BG); // Escape key because it's not covered by all for some reason
+  
+  // Insert key
+  rgb_matrix_set_color(13, 0, 255, 0); 
+
+  // Delete key
+  rgb_matrix_set_color(14, 0, 0, 255); 
+
+  return true;
 }
+
