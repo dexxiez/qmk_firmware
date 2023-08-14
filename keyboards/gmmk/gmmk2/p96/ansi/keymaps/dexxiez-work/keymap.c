@@ -49,7 +49,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 
-#define RGB_BG 227, 28, 121
+#define RGB_BG 0xCC, 0x56, 0x03
 
 static int MEDIA_KEYS[] = {5,6,7,8};
 static int MEDIA_KEYS_LENGTH = sizeof(MEDIA_KEYS) / sizeof(MEDIA_KEYS[0]);
@@ -75,7 +75,7 @@ bool rgb_matrix_indicators_kb (void){
   rgb_matrix_set_color(13, 0, 255, 0); 
 
   // Delete key
-  rgb_matrix_set_color(14, 255, 140, 0); 
+  rgb_matrix_set_color(14, 0, 0, 255); 
 
   return true;
 }
