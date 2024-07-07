@@ -89,6 +89,7 @@
 // #define ENABLE_RGB_MATRIX_SOLID_SPLASH
 // #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 
-#define AW20216S_CS_PIN_1 A15
-#define AW20216S_CS_PIN_2 B15
-#define AW20216S_EN_PIN C13
+// ## These were added in a commit but they are being redefined
+// #define AW20216S_CS_PIN_1 A15
+// #define AW20216S_CS_PIN_2 B15
+// #define AW20216S_EN_PIN C13

@@ -46,6 +46,9 @@ quantum/version.h
 /keyboards/**/kb.h
 /keyboards/**/kb.c
 
+# Python VENV
+qmkenv/
+
 # Eclipse/PyCharm/Other IDE Settings
 *.iml
 .browse.VC.db*
