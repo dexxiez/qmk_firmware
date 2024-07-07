@@ -16,18 +16,8 @@
 
 #pragma once
 
-#define TAP_CODE_DELAY 10
-
-/* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
-#define LOCKING_SUPPORT_ENABLE
-/* Locking resynchronize hack */
-#define LOCKING_RESYNC_ENABLE
-
-#define RGB_DISABLE_WHEN_USB_SUSPENDED
-
 /* External spi flash */
 #define EXTERNAL_FLASH_SPI_SLAVE_SELECT_PIN B14
-#define WEAR_LEVELING_BACKING_SIZE 2048
 
 /* SPI Config for LED Driver */
 #define SPI_DRIVER SPIDQ
@@ -79,15 +69,12 @@
 // #define ENABLE_RGB_MATRIX_PIXEL_FLOW
 // #define ENABLE_RGB_MATRIX_PIXEL_FRACTAL
 
-
-
 // enabled only if RGB_MATRIX_FRAMEBUFFER_EFFECTS is defined
 
 // #define ENABLE_RGB_MATRIX_TYPING_HEATMAP
 // #define ENABLE_RGB_MATRIX_DIGITAL_RAIN
 
-// enabled only of RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is defined
-
+// enabled only if RGB_MATRIX_KEYPRESSES or RGB_MATRIX_KEYRELEASES is defined
 
 // #define ENABLE_RGB_MATRIX_SOLID_REACTIVE_SIMPLE
 // #define ENABLE_RGB_MATRIX_SOLID_REACTIVE
@@ -101,3 +88,7 @@
 // #define ENABLE_RGB_MATRIX_MULTISPLASH
 // #define ENABLE_RGB_MATRIX_SOLID_SPLASH
 // #define ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
+
+#define AW20216S_CS_PIN_1 A15
+#define AW20216S_CS_PIN_2 B15
+#define AW20216S_EN_PIN C13
