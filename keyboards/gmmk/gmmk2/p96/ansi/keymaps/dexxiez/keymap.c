@@ -14,6 +14,11 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+
+
+////////////// SKIP FORMAT IN NVIM //////////////
+//////////////////// :noa w ////////////////////
+
 #include QMK_KEYBOARD_H
 
 // Each layer gets a name for readability, which is then used in the keymap matrix below.
@@ -34,20 +39,21 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_LSFT,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,  KC_RSFT,  KC_UP,    KC_P1,    KC_P2,    KC_P3,    KC_PENT,
   KC_LCTL,  KC_LGUI,  KC_LALT,                      KC_SPC,                                 KC_RALT,  MO(_FL),  KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT,  KC_P0,    KC_PDOT),
 
-  /* Keymap _FL: Function Layer
+    /* Keymap _FL: Function Layer
    */
 [_FL] = LAYOUT(
   QK_BOOT,  EE_CLR,  KC_WHOM,  KC_CALC,  KC_MSEL,  KC_MPRV,  KC_MRWD,  KC_MPLY,  KC_MSTP,  KC_MUTE,  KC_VOLD,  KC_VOLU,  _______,   _______,  _______,  _______,  _______,  _______,
   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,
   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,   _______,  _______,  _______,  _______,  _______,
   KC_CAPS,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,             _______,  _______,  _______,
-  _______,  RGB_HUI,  RGB_HUD,  RGB_SPD,  RGB_SPI,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  RGB_VAI,   _______,  _______,  _______,  _______,
+  _______,  RGB_HUI,  RGB_HUD,  RGB_SPD,  RGB_SPI,  QK_BOOT,  _______,  _______,  _______,  _______,  _______,  _______,  RGB_VAI,   _______,  _______,  _______,  _______,
   _______,  UC_WIN,   _______,                      _______,                                _______,  _______,  _______,  RGB_RMOD,  RGB_VAD,  RGB_MOD,  _______,  _______)
 };
 
 #define RGB_BG 227, 28, 121
 
 static int MEDIA_KEYS[]      = {5, 6, 7, 8};
+static int CAPS_LOCK_KEY     = 54;
 static int MEDIA_KEYS_LENGTH = sizeof(MEDIA_KEYS) / sizeof(MEDIA_KEYS[0]);
 
 bool rgb_matrix_indicators_kb(void) {
@@ -59,6 +65,8 @@ bool rgb_matrix_indicators_kb(void) {
         for (int i = 0; i < MEDIA_KEYS_LENGTH; i++) {
             rgb_matrix_set_color(MEDIA_KEYS[i], RGB_BG);
         }
+
+        rgb_matrix_set_color(CAPS_LOCK_KEY, RGB_BG);
 
         return true;
     }
