@@ -87,7 +87,7 @@ void handle_keystates(void){
     }
 
     if (capslock_active){
-        rgb_matrix_set_color(CAPSLOCK_KEY, RGB_GREEN);
+        rgb_matrix_set_color(CAPSLOCK_KEY, RGB_RED);
     }
 }
 
@@ -102,7 +102,7 @@ bool rgb_matrix_indicators_kb(void) {
         }
 
         rgb_matrix_set_color(CAPSLOCK_KEY, CURRENT_RGB_BG);
-
+        rgb_matrix_set_color(L_KEY, CURRENT_RGB_BG);
         return true;
     }
 
@@ -154,7 +154,7 @@ void keyboard_post_init_user(void) {
     if (!eeconfig_is_enabled()) {
         eeconfig_init();
     }
-    
+
     // Load saved color index from our specific address
     current_bg_index = eeprom_read_byte((uint8_t*)EEPROM_BG_COLOR_INDEX);
     if (current_bg_index >= NUM_BG_COLORS) {

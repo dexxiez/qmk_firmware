@@ -14,6 +14,7 @@
 #define DELETE_KEY 14
 #define NUMLOCK_KEY 32
 #define CAPSLOCK_KEY 54
+#define L_KEY 63
 
 #define MEDIA_KEYS_RANGE 5, 6, 7, 8
 
