@@ -106,6 +106,28 @@ bool rgb_matrix_indicators_kb(void) {
 
         rgb_matrix_set_color(CAPSLOCK_KEY, CURRENT_RGB_BG);
         rgb_matrix_set_color(L_KEY, CURRENT_RGB_BG);
+
+        switch (current_bg_index) {
+            case 0:
+                rgb_matrix_set_color(NUMPAD1_KEY, RGB_WHITE);
+                break;
+            case 1:
+                rgb_matrix_set_color(NUMPAD2_KEY, RGB_WHITE);
+                break;
+            case 2:
+                rgb_matrix_set_color(NUMPAD3_KEY, RGB_WHITE);
+                break;
+            case 3:
+                rgb_matrix_set_color(NUMPAD4_KEY, RGB_WHITE);
+                break;
+            case 4:
+                rgb_matrix_set_color(NUMPAD5_KEY, RGB_WHITE);
+                break;
+            case 5:
+                rgb_matrix_set_color(NUMPAD6_KEY, RGB_WHITE);
+                break;
+
+        }
         return true;
     }
 

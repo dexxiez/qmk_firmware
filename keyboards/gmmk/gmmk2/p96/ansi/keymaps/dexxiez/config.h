@@ -16,6 +16,12 @@
 #define NUMLOCK_KEY 32
 #define CAPSLOCK_KEY 54
 #define L_KEY 63
+#define NUMPAD1_KEY 83
+#define NUMPAD2_KEY 84
+#define NUMPAD3_KEY 85
+#define NUMPAD4_KEY 67
+#define NUMPAD5_KEY 68
+#define NUMPAD6_KEY 69
 
 #define MEDIA_KEYS_RANGE 5, 6, 7, 8
 
