@@ -1,7 +1,6 @@
 #ifndef DEXXIEZ_BG_CYCLE_H
 #define DEXXIEZ_BG_CYCLE_H
 
-#include QMK_KEYBOARD_H
 #include "../../structs.h"
 
 #define NUM_BG_COLORS 5

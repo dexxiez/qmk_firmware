@@ -10,10 +10,18 @@
 #define RGB_INSERT 0, 255, 0
 #define RGB_DELETE 255, 140, 0
 
+#define RGB_GREY 128, 128, 128
+
 #define ESC_KEY 0
+#define F1_KEY 1
+#define F2_KEY 2
+#define F3_KEY 3
+#define F4_KEY 4
 #define INSERT_KEY 13
 #define DELETE_KEY 14
 #define NUMLOCK_KEY 32
+#define TAB_KEY    36
+#define LSHIFT_KEY 70
 #define CAPSLOCK_KEY 54
 #define L_KEY 63
 #define NUMPAD1_KEY 83

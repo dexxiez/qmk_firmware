@@ -1,3 +1,4 @@
+#include QMK_KEYBOARD_H  // IWYU pragma: keep
 #include "bg_cycle.h"
 #include "config.h"
 

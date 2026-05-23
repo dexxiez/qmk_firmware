@@ -1,5 +1,6 @@
 #include "indicators.h"
 #include "bg_cycle.h"
+#include "f_cycle.h"
 #include "config.h"
 #include "layers.h"
 
@@ -42,6 +43,11 @@ bool rgb_matrix_indicators_kb(void) {
         rgb_matrix_set_color(CAPSLOCK_KEY, CURRENT_RGB_BG);
         rgb_matrix_set_color(L_KEY, CURRENT_RGB_BG);
 
+        if (f_cycle_active) {
+            rgb_matrix_set_color(LSHIFT_KEY, RGB_WHITE);
+            rgb_matrix_set_color(TAB_KEY, RGB_WHITE);
+        }
+
         switch (current_bg_index) {
             case 0:
                 rgb_matrix_set_color(NUMPAD1_KEY, RGB_WHITE);
@@ -70,6 +76,11 @@ bool rgb_matrix_indicators_kb(void) {
 
     rgb_matrix_set_color(INSERT_KEY, RGB_INSERT);
     rgb_matrix_set_color(DELETE_KEY, RGB_DELETE);
+
+    if (f_cycle_active) {
+        rgb_matrix_set_color(LSHIFT_KEY, RGB_GREY);
+        rgb_matrix_set_color(TAB_KEY, RGB_GREY);
+    }
 
     return true;
 }
