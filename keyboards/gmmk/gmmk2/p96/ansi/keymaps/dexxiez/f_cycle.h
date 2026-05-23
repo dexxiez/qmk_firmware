@@ -5,7 +5,7 @@
 #include <stdint.h>
 
 #define CYCLE_TIMEOUT_MS 2000
-#define CYCLE_OPTIONS 4
+#define CYCLE_OPTIONS 5
 
 extern uint8_t current_f_cycle_index;
 extern bool    f_cycle_active;
